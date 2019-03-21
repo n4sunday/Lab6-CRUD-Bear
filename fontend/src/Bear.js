@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 //import axios from "axios"
 import { store } from "./App"
 import {connect} from "react-redux"
-import {getBears} from "./App"
+import {getBears} from "./actions"
 
 class Bear extends Component {
 

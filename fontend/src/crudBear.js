@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import './App.css'
-import axios from 'axios'
-import { getBears } from "./App"
-import { addbear, store } from "./App"
+import { addbear,getBears } from "./actions"
+import { store } from "./App"
+
 
 class crudBear extends Component {
     componentDidMount = () => {
