@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 //import axios from "axios"
 import { store } from "./App"
-import {connect} from "react-redux"
-import {getBears} from "./App"
+import { connect } from "react-redux"
+import { getBears } from "./actions"
 
 class Bear extends Component {
 
@@ -31,9 +31,11 @@ class Bear extends Component {
 
 
     renderBear = () => {
-        if ( this.props.bears )
-            return  this.props.bears.map( (bear,index) =>
-                (<li class='app' key={index}> {bear.id} {bear.name} {bear.weight} </li>)
+        if (this.props.bears)
+            return this.props.bears.map((bear, index) =>
+                (
+                    <li class='app' key={index}> {bear.id} {bear.name} {bear.weight} </li>
+                )
             )
     }
 
@@ -41,19 +43,19 @@ class Bear extends Component {
         return (
             <div>
                 <ul>
-                    { this.renderBear()}
+                    {this.renderBear()}
                 </ul>
             </div>
         );
     }
 }
 
-const mapStateToProps = ( {bears} ) => { return {bears} }
+const mapStateToProps = ({ bears }) => { return { bears } }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getBears:  () => store.dispatch(getBears()),
+        getBears: () => store.dispatch(getBears()),
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Bear);
+export default connect(mapStateToProps, mapDispatchToProps)(Bear);

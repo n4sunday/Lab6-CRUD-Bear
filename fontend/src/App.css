@@ -24,3 +24,6 @@ img {
 img:hover {
     transform: rotate(20deg);
 }
+table, th, td {
+    border: 1px solid white;
+  }
